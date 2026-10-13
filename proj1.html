@@ -1,0 +1,279 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Quest</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #101827;
+            color: white;
+            padding: 20px;
+        }
+
+        /* Game Header */
+        .game-header {
+            background-color: #1e293b;
+            padding: 25px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .game-header h1 {
+            color: #38bdf8;
+        }
+
+        .player-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Main Game Layout */
+        .game-container {
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+            margin-bottom: 20px;
+        }
+
+        /* Game Area */
+        .game-area {
+            flex: 2;
+            background-color: #1e3a32;
+            padding: 25px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            min-height: 350px;
+            text-align: center;
+        }
+
+        .game-area h2 {
+            color: #86efac;
+        }
+
+        .game-character {
+            font-size: 70px;
+        }
+
+        .game-message {
+            background-color: #14532d;
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 100%;
+        }
+
+        /* Side Panels */
+        .side-panels {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .panel {
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .panel h2 {
+            color: #facc15;
+            margin-bottom: 15px;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .controls button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        /* Inventory */
+        .inventory-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .item {
+            background-color: #334155;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+            min-width: 70px;
+        }
+
+        /* Quest Panel */
+        .quest-panel {
+            background-color: #312e81;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .quest-panel h2 {
+            color: #c4b5fd;
+            margin-bottom: 10px;
+        }
+
+        .quest-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .quest-status {
+            background-color: #4c1d95;
+            padding: 10px 15px;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        .game-footer {
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #cbd5e1;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+
+            .game-container {
+                flex-direction: column;
+            }
+
+            .game-area {
+                min-height: 280px;
+            }
+
+            .game-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .quest-details {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Game Header -->
+    <header class="game-header">
+        <h1>⚔️ Flexbox Quest</h1>
+
+        <div class="player-info">
+            <p>🧙 Player: Alex</p>
+            <p>❤️ Health: 100</p>
+            <p>⭐ Level: 5</p>
+        </div>
+    </header>
+
+    <!-- Main Game Area -->
+    <main class="game-container">
+
+        <section class="game-area">
+            <h2>Enchanted Forest</h2>
+
+            <div class="game-character">🧙</div>
+
+            <p>You are exploring a mysterious forest!</p>
+
+            <div class="game-message">
+                A treasure chest is waiting nearby.
+            </div>
+        </section>
+
+        <div class="side-panels">
+
+            <!-- Controls -->
+            <section class="panel">
+                <h2>🎮 Controls</h2>
+
+                <div class="controls">
+                    <button type="button">⬆ Up</button>
+                    <button type="button">⬇ Down</button>
+                    <button type="button">⬅ Left</button>
+                    <button type="button">➡ Right</button>
+                </div>
+            </section>
+
+            <!-- Inventory -->
+            <section class="panel">
+                <h2>🎒 Inventory</h2>
+
+                <div class="inventory-items">
+                    <div class="item">🗡️<p>Sword</p></div>
+                    <div class="item">🛡️<p>Shield</p></div>
+                    <div class="item">🧪<p>Potion</p></div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Quest Panel -->
+    <section class="quest-panel">
+        <h2>📜 Current Quest</h2>
+
+        <div class="quest-details">
+            <p>Find the magical crystal hidden in the forest.</p>
+
+            <div class="quest-status">
+                Progress: 2 / 5
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="game-footer">
+        <p>© 2026 Flexbox Quest</p>
+        <p>Adventure awaits!</p>
+    </footer>
+
+</body>
+</html>
+```
